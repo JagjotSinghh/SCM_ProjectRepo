@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySocialHub</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.png">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <style>
+  </style>
+</head>
+
+<body>
+  <header class="header-bg">
+    <div class="header-wrapper">
+      <h1 class="header-title">MySocialHub</h1>
+    </div>
+    <div class="switcher-wrapper">
+      <label class="switch-name">Dark Mode</label>
+      <input type="checkbox" class="switch" id="light-mode-switcher">
+    </div>
+  </header>
+  <nav>
+    <section class="navbar">
+      <a href="featured.html">Featured This Week</a>
+    </section>
+    <section class="navbar">
+      <a href="trending.html">Trending This Week</a>
+    </section>
+    <section class="navbar">
+      <a href="login.html">Check Your Profile</a>
+    </section>
+    <section class="navbar">
+      <a href="signup.html">Sign Up</a>
+    </section>
+    <section class="navbar">
+      <a href="chat.html">Chat With Us</a>
+    </section>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header-wrapper">
+        <h1 class="card-fllwr" id="follower-count">Loading...</h1>
+        <p class="card-fllwr-text">Followers</p>
+      </div>
+      <div class="card-footer-wrapper">
+        <span class="card-fllwr-update">Updated in real-time</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+  <script src="./js/home.js"></script>
+
+  <script>
+    // Simulating real-time updates
+    function updateFollowerCount() {
+      // Replace this with an AJAX request to your server
+      // Your server should interact with the social media platform's API
+      // to get the actual follower count
+      const followerCount = Math.floor(Math.random() * 10000);
+
+      // Update the follower count on the page
+      document.getElementById('follower-count').innerText = followerCount.toLocaleString(); // Using toLocaleString for better number formatting
+    }
+
+    // Update follower count every 5 seconds (adjust as needed)
+    setInterval(updateFollowerCount, 5000);
+
+    // Initial update
+    updateFollowerCount();
+  </script>
+</body>
+
+</html>

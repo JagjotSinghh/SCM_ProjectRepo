@@ -1,0 +1,64 @@
+
+.logo{
+    display: block;
+    font-weight: bold;
+    position: relative;
+    font-size: 2vw;
+    padding-bottom: 20px;
+
+}
+.logo span:nth-child(2){
+    background-color: blue;
+    border-radius: 10px;
+    padding: 0 1vw 0.3vw 0.5vw;
+}
+.container{
+    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    min-height: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    background-color: var(--login-bg);
+    backdrop-filter: blur;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; 
+    max-width: 400px
+}
+::placeholder {
+    color: var(--placeholder); 
+  }
+.input{
+    width: 90%;
+    padding: 10px;
+    margin: 6px ;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid white;
+    color: white;
+}
+.signin{
+    background-color: lightblue;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+a{
+    color: lightblue;
+}
+.forgot-password, .signup{
+    margin-top: 5%;
+}
+a{
+    text-decoration: none;
+}

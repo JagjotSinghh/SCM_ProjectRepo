@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MySocialHub</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header-bg">
+    <div class="header-wrapper">
+      <h1 class="header-title">MySocialHub</h1>
+      <h2 class="header-subtitle">Total Followers: 23,004</h2>
+    </div>
+    <div class="switcher-wrapper">
+      <label class="switch-name">Dark Mode</label>
+      <input type="checkbox" class="switch" id="light-mode-switcher">
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="cards-wrapper">
+      <!-- Facebook Card -->
+      <div class="card fb" id="facebook-card">
+        <div class="card-header-wrapper">
+          <img src="./images/icon-facebook.svg">
+          <h2 class="card-name">Carry Minati</h2>
+        </div>
+        <h3 class="card-fllwr" id="facebook-followers">1987</h3>
+        <p class="card-fllwr-text">Followers</p>
+        <div class="card-footer-wrapper">
+          <img src="./images/icon-up.svg">
+          <h4 class="card-fllwr-update fllwr-up" id="facebook-update">12 Today</h4>
+        </div>
+      </div>
+<!-- Other Cards (Twitter, Instagram, YouTube) -->
+<div class="card tt" id="twitter-card">
+    <div class="card-header-wrapper">
+      <img src="./images/icon-twitter.svg">
+      <h2 class="card-name">Carry Minati</h2>
+    </div>
+    <h3 class="card-fllwr" id="twitter-followers">1044</h3>
+    <p class="card-fllwr-text">Followers</p>
+    <div class="card-footer-wrapper">
+      <img src="./images/icon-up.svg">
+      <h4 class="card-fllwr-update fllwr-up" id="twitter-update">99 Today</h4>
+    </div>
+  </div>
+  
+  <div class="card ig" id="instagram-card">
+    <div class="padd-adj">
+      <div class="card-header-wrapper">
+        <img src="./images/icon-instagram.svg">
+        <h2 class="card-name">Carry Minati</h2>
+      </div>
+      <h3 class="card-fllwr" id="instagram-followers">11k</h3>
+      <p class="card-fllwr-text">Followers</p>
+      <div class="card-footer-wrapper">
+        <img src="./images/icon-up.svg">
+        <h4 class="card-fllwr-update fllwr-up" id="instagram-update">1099 Today</h4>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card yt" id="youtube-card">
+    <div class="card-header-wrapper">
+      <img src="./images/icon-youtube.svg">
+      <h2 class="card-name">Carry Minati</h2>
+    </div>
+    <h3 class="card-fllwr" id="youtube-subscribers">8239</h3>
+    <p class="card-fllwr-text">Subscribers</p>
+    <div class="card-footer-wrapper">
+      <img src="./images/icon-down.svg">
+      <h4 class="card-fllwr-update fllwr-down" id="youtube-update">144 Today</h4>
+    </div>
+  </div>
+  
+  <script>
+    // Simulating real-time updates for Carry Minati on Twitter, Instagram, and YouTube
+    function updateCarryMinatiData() {
+      const carryData = {
+        twitter: {
+          followers: Math.floor(Math.random() * 50000),
+          updateToday: Math.floor(Math.random() * 50),
+        },
+        instagram: {
+          followers: Math.floor(Math.random() * 500000),
+          updateToday: Math.floor(Math.random() * 500),
+        },
+        youtube: {
+          subscribers: Math.floor(Math.random() * 10000000),
+          updateToday: Math.floor(Math.random() * 200),
+        },
+      };
+  
+      // Update Twitter card data
+      $('#twitter-followers').text(carryData.twitter.followers.toLocaleString());
+      $('#twitter-update').text(`${carryData.twitter.updateToday} Today`);
+  
+      // Update Instagram card data
+      $('#instagram-followers').text(carryData.instagram.followers.toLocaleString());
+      $('#instagram-update').text(`${carryData.instagram.updateToday} Today`);
+  
+      // Update YouTube card data
+      $('#youtube-subscribers').text(carryData.youtube.subscribers.toLocaleString());
+      $('#youtube-update').text(`${carryData.youtube.updateToday} Today`);
+    }
+  
+    // Update Carry Minati data every 5 seconds (adjust as needed)
+    setInterval(updateCarryMinatiData, 5000);
+  
+    // Initial update
+    updateCarryMinatiData();
+  </script>
+  
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-wrapper">
+      <h2 class="overview-heading">Overview - Today</h2>
+
+      <!-- Mini Cards -->
+      <div class="cards-wrapper">
+        <!-- Modify the following mini card to include Carry Minati data -->
+        <div class="mini-card">
+          <div class="mini-card-view-wrapper">
+            <h3 class="mini-card-heading">Profile Photo</h3>
+            <img src="carry_minati_photo.jpg" alt="Carry Minati">
+          </div>
+          <div class="mini-card-update-wrapper">
+            <h3 class="mini-card-fllwr">Followers: <span id="carry-followers">1987</span></h3>
+            <!-- You can add more data or update it dynamically as needed -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script>
+    // Simulating real-time updates for Carry Minati
+    function updateCarryMinatiData() {
+      // Replace this with an AJAX request to your server or any other method to fetch real-time data
+      const carryData = {
+        followers: Math.floor(Math.random() * 1000000),
+        updateToday: Math.floor(Math.random() * 100),
+      };
+
+      // Update the Facebook card data
+      $('#facebook-followers').text(carryData.followers.toLocaleString());
+      $('#facebook-update').text(`${carryData.updateToday} Today`);
+
+      // Update the mini card data
+      $('#carry-followers').text(carryData.followers.toLocaleString());
+      // You can update more data here
+
+      // Repeat the process for other social media cards if needed
+    }
+
+    // Update Carry Minati data every 5 seconds (adjust as needed)
+    setInterval(updateCarryMinatiData, 5000);
+
+    // Initial update
+    updateCarryMinatiData();
+  </script>
+</body>
+</html>

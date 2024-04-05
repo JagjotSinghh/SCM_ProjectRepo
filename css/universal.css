@@ -1,0 +1,55 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo69{
+    display: block;
+    font-weight: bold;
+    position: relative;
+    font-size: 2vw;
+    margin-right: 20px;
+
+}
+.logo69 span:nth-child(2){
+    background-color: aqua;
+    border-radius: 10px;
+    padding: 0 1vw 0.3vw 0.5vw;
+}
+.btext{
+    font-size: 20pt;
+    margin-top: 5px;
+    padding-right: 400px;
+    transition: transform 0.3s ease;
+
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.search{
+    border-radius: 5px;
+    height: 25px;
+    width: 300px;
+}
+.submit{
+    background-color: lightblue;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.submit:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.redirect-body{
+    text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
+    align-items: center;
+    position: relative;
+    
+}

@@ -1,0 +1,12 @@
+<html><body>
+    <ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+    <button onclick="myFunction()">Try it</button>
+    <script>
+    function myFunction() 
+    {
+        var textnode = document.createTextNode("Water"); // Create a new text node called "Water"
+        var item = document.getElementById("myList").childNodes[0]; // Get the first child node of an <ul> element
+        item.replaceChild(textnode, item.childNodes[0]); // Replace the first child node of <ul> with the newly created text node
+    }
+    </script></body></html>
+    

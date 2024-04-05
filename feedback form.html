@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #feedback-form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            height: 34px; /* Make select box height same as input boxes */
+        }
+
+        button {
+            background-color: rgb(0, 183, 255);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(0, 119, 255);
+        }
+    </style>
+</head>
+<body>
+
+<div id="feedback-form">
+    <h2>Feedback Form</h2>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="ratings">Ratings:</label>
+        <select id="ratings" name="ratings" required>
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Very Good</option>
+            <option value="3">3 - Good</option>
+            <option value="2">2 - Fair</option>
+            <option value="1">1 - Poor</option>
+        </select>
+
+        <label for="review">Review about the website:</label>
+        <textarea id="review" name="review" rows="4" required></textarea>
+
+        <label for="complaints">Complaints (if any):</label>
+        <textarea id="complaints" name="complaints" rows="4"></textarea>
+
+        <button type="button" onclick="submitForm()">Submit Feedback</button>
+    </form>
+</div>
+
+<script>
+    function submitForm() {
+        // You can add your logic here to handle the form submission, for example, sending data to a server.
+        alert('Feedback submitted successfully!');
+        document.getElementById("myForm").reset(); // Reset the form after submission
+    }
+</script>
+
+</body>
+</html>

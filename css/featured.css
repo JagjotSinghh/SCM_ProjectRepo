@@ -1,0 +1,62 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.slider {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 500px;
+    justify-content: center;
+    align-items: center; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+.featured{
+    position: relative;
+    font-size: 3vh;
+    padding-bottom: 25px;
+    text-align: center;
+}

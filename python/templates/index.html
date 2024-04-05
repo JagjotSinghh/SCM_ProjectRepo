@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log In</title>
+    <link rel="icon" type="image/x-icon" href="../../../images/logo.png">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/login.css">
+</head>
+<body>
+    <header class="header-bg">
+        <div class="header-wrapper">
+          <h1 class="header-title">MySocialHub</h1>
+        </div>
+        <div class="switcher-wrapper">
+          <label class="switch-name">Dark Mode</label>
+          <input type="checkbox" class="switch" id="light-mode-switcher">
+        </div>
+      </header>
+
+    <div class="container">
+        <div class="login">
+            <div class="logo">
+                <span>MySocial</span>
+                <span>Hub</span>
+            </div>
+            <form action="/login" method="post">  <!-- Update form action and method -->
+                <input type="email" name="text" placeholder="Enter Your Email" class="input">
+                <br>
+                <input type="password" name="password" placeholder="Password" class="input">
+                <br>
+                <button type="submit" class="signin">Sign In</button>
+            </form>
+            <div class="forgot-password" style="padding-bottom: 10px;">
+                <a href="forgot-password.html" style="font-size: large;"> Forgot Your Password?</a>
+            </div>
+            <div class="sign-up">
+                <p style="font-size: large;">New To MySocial Hub?  <a href="signup.html">Sign Up Now!</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="./js/index.js"></script>
+</body>
+</html>
