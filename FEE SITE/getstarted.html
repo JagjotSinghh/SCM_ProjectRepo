@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Address Book</title>
+    <link rel="stylesheet" href="youtube.css">
+    <script src="addressbook.js"></script>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section class="sub-main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Address Book</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="FEE-ADDRESS-BOOK.html">HOME</a></li>
+                    <li><a href="Features.html">FEATURES</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="Contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <button class="btn" onclick="showWarning()">Search</button>
+                <script>
+                function showWarning() {
+                    alert('This feature is under development.');
+                }
+                </script>
+            </div>
+        </div>
+        <h1>Address Book</h1>
+    </section>
+    <div class="container">
+        <div class="title">
+            <br><h1>Address Book</h1><br><br><br><hr><hr>
+            <button class="btnn" id="AddNowBtn">+ Add New Address</button>
+            <a href="https://docs.google.com/spreadsheets/d/1Tt9CiYYmsfDRtVzIypHP4odLZLVPgAk0zLkuyGzwDz4/edit?resourcekey#gid=353221200" target="_blank">
+                <button class="btnn">Stored Addresses</button></a>
+            <div class="addbook" id="addBookContainer"></div>
+            <!-- Add this script to the head section of your HTML -->
+            <form action="submit_form.php" method="post"><br><br>
+
+                <!-- Name -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+        
+                <!-- Email Address -->
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required><br><br>
+        
+                <!-- Phone Number -->
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+        
+                <!-- Roll Number -->
+                <label for="roll">Roll Number:</label>
+                <input type="text" id="roll" name="roll" required><br><br>
+        
+                <!-- City -->
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required><br><br>
+        
+                <!-- Date of Birth -->
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+        
+                <!-- Group Number -->
+                <label for="group">Group Number:</label>
+                <input type="text" id="group" name="group" required><br><br>
+        
+                <!-- Submit Button -->
+                <input type="submit" class="btnn" value="Submit"><br><br>
+        
+            </form>
+        </div>
+        
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const addNowBtn = document.getElementById('AddNowBtn');
+        const quickAddForm = document.querySelector('.quickaddForm');
+        const addBookContainer = document.getElementById('addBookContainer');
+
+        addNowBtn.addEventListener('click', function () {
+            // Open Google Form in a new tab
+            const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScbBp1o-vgnpp2pg3yzKxs2g-sTgxj8nQa_jjUiR_WTxszjHQ/viewform?usp=sf_link";
+            window.open(googleFormUrl, '_blank');
+        });
+
+        // Your existing code for form submission and displaying details
+        addNowBtn.addEventListener('click', function () {
+            // Get form data
+            const name = document.getElementById('fullname').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const email = document.getElementById('email').value;
+            const rollNo = document.getElementById('rollno').value;
+
+            // Display the data on the page
+            const entryDiv = document.createElement('div');
+            entryDiv.classList.add('entry');
+            entryDiv.innerHTML = `
+                <div class="name"><p>${name}</p></div>
+                <div class="email"><p>${email}</p></div>
+                <div class="phone"><p>${phone}</p></div>
+                <div class="address"><p>${address}</p></div>
+                <div class="city"><p>${city}</p></div>
+                <div class="rollNo"><p>${rollNo}</p></div>
+                <div class="del"><a href="#">Delete</a></div>
+            `;
+
+            addBookContainer.appendChild(entryDiv);
+            quickAddForm.style.display = 'none';
+        });
+    });
+</script>
+
+
+    </div>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>AddressBook is the go-to address book solution for individuals and businesses looking to simplify their contact management</p>
+        <div class="icn">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+        </div>
+        <p>Made With &#10084 by Krish Krishdeep and Kirti</p>
+    </section>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>

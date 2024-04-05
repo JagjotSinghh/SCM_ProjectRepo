@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Address Book</title>
+    <link rel="stylesheet" href="youtube.css">
+</head>
+<body>
+    <div class="overlay" id="termsOverlay">
+        <div class="terms-box">
+            <div class="terms-text">
+                <h2> Terms of service</h2><br>
+                <p><b>Greetings users,</b></p><br>
+                <p><b>1. User Agreement :</b>
+                    By accessing and using the address book website, you agree to comply with these terms and conditions.</p><br>
+                <p><b>2. Registration :</b>
+                    Users may need to register an account to access certain features. Provide accurate information during registration and ensure the security of your account credentials.</p><br>
+                <p><b>3. Privacy Policy :</b>
+                    Users personal information is subject to the privacy policy. Clearly outline what data is collected, how it's used, and if it's shared with third parties.</p><br>
+                <p><b>4. User Responsibilities :</b>
+                    Users are responsible for the accuracy of the information they input into the address book. Prohibit the use of misleading or false data.</p><br>
+                <p><b>5. Content Ownership :</b>
+                    Users retain ownership of their data. The website may use the data as outlined in the privacy policy, but ownership remains with the user.</p><br>
+                <p><b>6. Prohibited Activities :</b>
+                    Clearly state activities that are not allowed, such as spamming, hacking, or any other misuse of the website.</p><br>
+                <p><b>7. Security Measures :</b>
+                    Detail the security measures in place to protect user data. Advise users to report any security concerns promptly.</p><br>
+                <p><b>8. Termination of Accounts :</b>
+                    Outline conditions under which accounts may be terminated, including violation of terms or inactivity.</p><br>
+                <p><b>9. Intellectual Property :</b>
+                    Specify that all content and materials on the website are the intellectual property of the website owner. Users must obtain permission for any use beyond what is expressly allowed.</p><br>
+                <p>10. Disclaimers:
+                    Include disclaimers about the accuracy of information provided, potential service interruptions, and the website's limitations.</p><br>
+                <p>11. Liability Limitations:
+                    Limit the website's liability for any damages or losses incurred by users while using the service.</p><br>
+                <p>12. Changes to Terms:
+                    Reserve the right to update or modify the terms and conditions. Users should check periodically for changes.</p><br>
+                <p>13. Communication:
+                    Specify how the website will communicate with users, including notifications, updates, or important announcements.</p><br>
+                <p>14. Governing Law:
+                    Indicate the jurisdiction governing the agreement and any disputes arising from it.</p><br>
+                <p>15. Contact Information:
+                    Provide contact details for users to reach out for support, feedback, or to address any concerns.</p><br>
+                <p>16. Effective Date:
+                    Clearly state when the terms and conditions come into effect.</p><br>
+                <p>17. Acceptance of Terms:
+                    Users must explicitly accept the terms before using the website.</p><br>
+                <br><p> Last Edit:02/12/2023</p><br>
+                </div>
+                <h4>I agree to <span>Terms and conditions </span> and I read the Privacy  Notice.</h4>
+            <div class="buttons">
+                <button class="btn red-btn" onclick="acceptTerms()">Accept</button>
+                <button class="btn gray-btn" onclick="declineTerms()">Decline</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if the user has accepted the terms (you can use cookies or local storage for this)
+            var termsAccepted = localStorage.getItem("termsAccepted");
+
+            // If terms are not accepted, show the overlay
+            if (!termsAccepted) {
+                document.getElementById("termsOverlay").style.display = "flex";
+            }
+
+            // Function to execute when the "Accept" button is clicked
+            document.querySelector('.red-btn').addEventListener('click', function () {
+                // Add your logic for accepting the terms here
+                localStorage.setItem("termsAccepted", "true");
+                document.getElementById("termsOverlay").style.display = "none";
+                alert('Terms accepted!'); // Example: Display an alert
+            });
+
+            // Function to execute when the "Decline" button is clicked
+            document.querySelector('.gray-btn').addEventListener('click', function () {
+                // Add your logic for declining the terms here
+                alert('Terms declined!'); // Example: Display an alert
+                // You may want to redirect or handle declined terms appropriately
+            });
+        });
+        </script>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Address Book</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="FEE-ADDRESS-BOOK.html">HOME</a></li>
+                    <li><a href="Features.html">FEATURES</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="Contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <button class="btn" onclick="abc()">Search</button>
+                <script>
+                let filter=document.getElementedByid('my input').value.toUpperCase();
+      let myTable=document.getElementedByid('myTable');
+      let tr= myTable.getElementsByTagName('tr');
+
+      for(var i=0; i<tr.length;i++){
+        let td = tr[i].getElementsByTagName('td')[0];
+        if(td){
+            let textvlaue = td.textContent || td.innerHTML;
+            if(textvlaue.touppercase().indexOf(filter) > -1){
+              tr[i].style.display ="";
+            }else{
+              tr[i].style.display ="none";
+            }
+        }
+      }
+                </script>
+            </div>
+
+        </div> 
+        
+        <div class="content">
+            <h1>Organise and Manage Your Contacts<br/>  
+            <span>Like Never Before</span></h1>
+            <p class="par">Start managing your contacts in address book today<br/>
+                Record and manage your contacts with ease...</p>
+
+                <button class="cn"><a href="getstarted.html">GET STARTED</a></button>
+
+                <div class="form">
+                    <h2>Login Here</h2>
+                    <input type="email" id="email" name="email" placeholder="Enter Email Here">
+                    <input type="password" id="password" name="password" placeholder="Enter Password Here">
+                    <button class="btnn" onclick="validateForm()">Login</button>
+                
+                    <script>
+                        function validateForm() {
+                            var email = document.getElementById('email').value;
+                            var password = document.getElementById('password').value;
+                
+                            if (email.trim() === '') {
+                                alert('Email cannot be empty');
+                            }
+                            else if (password.trim() === '') {
+                                alert('Password cannot be empty');
+                            } 
+                            else if (password.length < 6) {
+                                alert('Password must be at least 6 characters long');
+                            } 
+                            else {
+                                // Proceed with the login logic here
+                                // For now, show a success message
+                                alert('Login successful!');
+                            }
+                        }
+                    </script>
+                
+                    <p class="link">Don't have an account<br>
+                        <a href="Signup Page.html">Sign up </a> here</p>
+                    <p class="liw">Log in with</p>
+                
+                    <div class="icons">
+                        <a href="https://www.facebook.com" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="https://www.instagram.com" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="https://www.twitter.com" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="https://www.google.com" target="_blank"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="https://www.skype.com" target="_blank"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+                </div>
+                
+                    </div>
+                </div>
+        </div>
+
+    <section class="features">
+        <h1 class="features-heading">Features We Offer<div class="spinner-border text-"></div></h1>
+        <p class="features-paragraph">Powerful and Intuitive Contact Management</p>
+
+        <div class="row">
+            <div class="features-col">
+                <h3 >Easy Contact Organization</h3>
+                <p><br/>Sort your contacts by groups, tags, or custom labels to easily find theinformation you need. Our advanced search capabilities and filtering options ensure that you can quickly locate any contact in your address book.</p>             
+            </div>
+            <div class="features-col">
+                <h3>Contact Import and Export</h3>
+                <p><br/>Import your existing contacts from other platforms or export them to various file formats. AddressBook supports popular formats like CSV and vCard, making it easy to transfer your contacts between different devices and applications.</p>
+            </div>
+            <div class="features-col">
+                <h3>Reminders and Notifications.</h3>
+                <p><br/>Never miss an important event or forget to reach out to a contact again.AddressBook allows you to set reminders and receive notifications for birthdays, anniversaries, meetings, and other important dates.</p>
+            </div>
+        </div>
+    </section>
+    <section class="campus">
+        <h1 class="features-heading">Simplify Your Contact Management</h1>
+        <p class="features-paragraph">Say goodbye to scattered and outdated contact informationes..</p> 
+        <p></p>
+        <div class="row">
+             
+            <div class="campus-col">
+                <img src="12345.png">
+                <div class="layer">
+                    <h3>GET</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="img2.jpeg">
+                <div class="layer">
+                    <h3>STARTED</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="123.png">
+                <div class="layer">
+                    <h3>NOW</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cta">
+        <h1>Make Your Contact Management Easy<br/>Anywhere From The World</h1>
+        <a href="Contact-us.html" class="hero-btn">CONTACT US</a>
+    </section>
+
+
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>AddressBook is the go-to address book solution for individuals and businesses looking to simplify their contact management</p>
+        <div class="icn">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+        </div>
+        <p>Made With &#10084 by Krish Krishdeep and Kirti</p>
+
+    </section>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    
+</body>
+</html>
